@@ -1,4 +1,4 @@
-package com.calendar.calendarbackend.web;
+package com.calendar.calendarbackend.web.config;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.interfaces.DecodedJWT;

@@ -1,4 +1,4 @@
-package com.calendar.calendarbackend.business;
+package com.calendar.calendarbackend.business.domainServices;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.Authentication;
