@@ -1,5 +1,7 @@
 package com.calendar.calendarbackend.business.dtos;
 
+import com.calendar.calendarbackend.business.dtos.user.User;
+
 import java.util.Date;
 import java.util.List;
 

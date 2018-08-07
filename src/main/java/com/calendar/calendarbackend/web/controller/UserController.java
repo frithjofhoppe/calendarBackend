@@ -1,7 +1,7 @@
 package com.calendar.calendarbackend.web.controller;
 
-import com.calendar.calendarbackend.business.applicationServices.interfaces.IUserApplicationService;
-import com.calendar.calendarbackend.business.dtos.User;
+import com.calendar.calendarbackend.business.service.application.interfaces.IUserApplicationService;
+import com.calendar.calendarbackend.business.dtos.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

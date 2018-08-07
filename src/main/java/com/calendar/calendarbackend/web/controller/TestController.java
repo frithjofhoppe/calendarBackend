@@ -1,6 +1,10 @@
 package com.calendar.calendarbackend.web.controller;
 
-import com.calendar.calendarbackend.business.domainServices.CurrentUserService;
+import com.calendar.calendarbackend.business.dtos.Auth0Token;
+import com.calendar.calendarbackend.business.dtos.user.SocialUser;
+import com.calendar.calendarbackend.business.service.provider.Auth0TokenService;
+import com.calendar.calendarbackend.business.service.provider.Auth0UserService;
+import com.calendar.calendarbackend.business.service.provider.CurrentUserService;
 import com.calendar.calendarbackend.infrastructure.repositories.CalendarEventRepository;
 import com.calendar.calendarbackend.infrastructure.repositories.CalendarRepository;
 import com.calendar.calendarbackend.infrastructure.repositories.UserRepository;
@@ -14,23 +18,16 @@ import java.security.Principal;
 @RestController
 public class TestController {
 
-    CurrentUserService userService;
-    UserRepository userRepository;
-    CalendarEventRepository calendarEventRepository;
-    CalendarRepository calendarRepository;
+    Auth0UserService tokenService;
 
     @Autowired
-    public TestController(CurrentUserService currentUserService, UserRepository userRepository, CalendarRepository calendarRepository, CalendarEventRepository calendarEventRepository){
-        this.userService = currentUserService;
-        this.calendarEventRepository = calendarEventRepository;
-        this.calendarRepository = calendarRepository;
-        this.userRepository = userRepository;
+    public TestController(Auth0UserService tokenService) {
+      this.tokenService = tokenService;
     }
 
-    @RequestMapping("/userinformation")
+    @RequestMapping("/test")
     @ResponseBody
-    public Object getUser (Principal principal) {
-
-        return userService.getAuthentication();
+    public SocialUser getUser(Principal principal) {
+        return tokenService.getCurrentUser();
     }
 }

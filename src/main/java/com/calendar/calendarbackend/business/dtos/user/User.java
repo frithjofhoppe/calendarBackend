@@ -1,4 +1,4 @@
-package com.calendar.calendarbackend.business.dtos;
+package com.calendar.calendarbackend.business.dtos.user;
 
 import java.util.List;
 
